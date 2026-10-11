@@ -93,15 +93,40 @@ p{margin:0 0 1em}
 .c-investigar{--frente:var(--adobe)}
 .c-pensar{--frente:var(--carmin)}
 
-/* ---------- barra ---------- */
-.barra{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:18px; padding-bottom:18px}
-.firma{font-family:var(--display); font-weight:900; font-size:1.5rem; text-decoration:none; line-height:1}
+/* ---------- barra (mobile first) ---------- */
+.cabecera{position:sticky; top:0; z-index:30; background:var(--cal); border-bottom:1px solid var(--linea)}
+.barra{position:relative; display:flex; align-items:center; gap:8px; min-height:60px}
+.firma{font-family:var(--display); font-weight:900; font-size:1.45rem; text-decoration:none; line-height:1; margin-right:auto; padding:12px 0; white-space:nowrap}
+.tema{width:44px; padding:0; display:inline-flex; align-items:center; justify-content:center}
+.tema-txt{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap}
+.menu-btn{white-space:nowrap}
 .firma span{color:var(--carmin)}
-.barra nav{display:flex; gap:20px; align-items:center; font-size:1rem}
-.barra nav a{text-decoration:none; border-bottom:1px solid transparent}
-.barra nav a:hover{border-bottom-color:currentColor}
-.tema{font:inherit; font-size:.95rem; background:none; color:inherit; border:1px solid var(--linea); padding:4px 12px; border-radius:99px; cursor:pointer}
-@media (max-width:900px){ .barra nav a{display:none} }
+.tema,.menu-btn{font:inherit; font-size:.95rem; min-height:44px; background:none; color:inherit; border:1px solid var(--linea); padding:0 14px; border-radius:99px; cursor:pointer}
+.menu-btn{display:inline-flex; align-items:center; gap:8px; background:var(--tinta); color:var(--cal); border-color:var(--tinta)}
+.menu-btn i{position:relative; width:16px; height:2px; background:currentColor; transition:background .2s}
+.menu-btn i::before,.menu-btn i::after{content:""; position:absolute; left:0; width:16px; height:2px; background:currentColor; transition:transform .2s}
+.menu-btn i::before{top:-5px} .menu-btn i::after{top:5px}
+.cabecera.abierta .menu-btn i{background:transparent}
+.cabecera.abierta .menu-btn i::before{transform:translateY(5px) rotate(45deg)}
+.cabecera.abierta .menu-btn i::after{transform:translateY(-5px) rotate(-45deg)}
+.secciones{display:none; position:absolute; left:-16px; right:-16px; top:100%; background:var(--cal); border-bottom:2px solid var(--tinta); padding:6px 16px 14px; max-height:calc(100vh - 60px); overflow-y:auto; box-shadow:0 18px 30px -20px rgba(0,0,0,.45)}
+.cabecera.abierta .secciones{display:block}
+.secciones a{display:flex; align-items:center; min-height:52px; font-family:var(--display); font-weight:700; font-size:1.75rem; text-decoration:none; border-bottom:1px solid var(--linea); border-left:6px solid var(--frente,transparent); padding-left:12px}
+.secciones a:last-child{border-bottom:0}
+[id]{scroll-margin-top:72px}
+@media (min-width:901px){
+  .cabecera{position:static; background:transparent; border-bottom:0}
+  .barra{gap:20px; padding-top:10px; padding-bottom:10px}
+  .menu-btn{display:none}
+  .secciones{display:flex !important; position:static; gap:20px; padding:0; border:0; box-shadow:none; background:none; max-height:none; overflow:visible; order:0}
+  .secciones a{min-height:0; font-family:var(--texto); font-weight:400; font-size:1rem; border:0; border-bottom:1px solid transparent; padding:0}
+  .secciones a:hover{border-bottom-color:currentColor}
+  .tema{min-height:34px; order:1; width:auto; padding:0 12px}
+  .tema-ico{display:none}
+  .tema-txt{position:static; width:auto; height:auto; overflow:visible; clip-path:none}
+  [id]{scroll-margin-top:16px}
+}
+@media (min-width:601px) and (max-width:900px){ .secciones{left:-24px; right:-24px; padding-left:24px; padding-right:24px} }
 
 /* ---------- pinta (hero) ---------- */
 .pintado{filter:url(#brocha)}
@@ -179,7 +204,9 @@ h3{font-family:var(--display); font-weight:700; font-size:2rem; line-height:1; m
 .hechos{list-style:none; padding:0; margin:22px 0; border-top:1px solid var(--linea)}
 .hechos li{display:grid; grid-template-columns:8.5rem 1fr; gap:14px; padding:10px 0; border-bottom:1px solid var(--linea); font-size:1.05rem}
 .hechos b{font-family:var(--display); font-weight:700; font-size:1.35rem; line-height:1.15; color:var(--frente)}
-.enlaces{display:flex; flex-wrap:wrap; gap:8px 22px; font-size:1.05rem}
+.enlaces{display:flex; flex-wrap:wrap; gap:0 24px; font-size:1.05rem}
+.enlaces a,.canales a{display:inline-flex; align-items:center; min-height:44px}
+.libro-cuentas td[data-t="Dónde"] a{display:inline-block; padding:12px 0; margin:-12px 0}
 .marco{border-radius:6px; overflow:hidden; box-shadow:0 0 0 1px var(--linea); background:#fff}
 .telefono{width:280px; max-width:100%; margin:0 auto; border:9px solid #1B1D2A; border-radius:32px; overflow:hidden; background:#fff}
 .tapa{width:290px; max-width:100%; margin:0 auto; box-shadow:0 18px 30px -18px rgba(0,0,0,.5)}
@@ -227,7 +254,7 @@ h3{font-family:var(--display); font-weight:700; font-size:2rem; line-height:1; m
 
 /* ---------- rendición de cuentas ---------- */
 .filtros{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px}
-.filtros button{font:inherit; font-size:1rem; cursor:pointer; background:transparent; color:var(--tinta); border:1.5px solid var(--tinta); border-radius:99px; padding:5px 16px}
+.filtros button{font:inherit; font-size:1rem; min-height:44px; cursor:pointer; background:transparent; color:var(--tinta); border:1.5px solid var(--tinta); border-radius:99px; padding:5px 16px}
 .filtros button[aria-pressed="true"]{background:var(--tinta); color:var(--cal)}
 .libro-cuentas{width:100%; border-collapse:collapse; font-size:1.02rem; background:var(--papel); box-shadow:0 0 0 1px var(--linea)}
 .libro-cuentas caption{text-align:left; font-size:.98rem; color:var(--tinta-2); padding:0 0 10px; caption-side:top}
@@ -244,7 +271,7 @@ h3{font-family:var(--display); font-weight:700; font-size:2rem; line-height:1; m
 .resumen-cuentas{margin-top:14px; font-size:.98rem; color:var(--tinta-2)}
 @media (max-width:760px){
   .libro-cuentas caption{display:block; padding:12px 16px 0}
-  .libro-cuentas thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  .libro-cuentas thead{display:none}
   .libro-cuentas, .libro-cuentas tbody, .libro-cuentas tr, .libro-cuentas td{display:block; width:auto}
   .libro-cuentas tr{padding:14px 16px; border-bottom:1px solid var(--linea); border-left:5px solid var(--frente)}
   .libro-cuentas td{border:0; padding:3px 0}
@@ -272,7 +299,9 @@ h3{font-family:var(--display); font-weight:700; font-size:2rem; line-height:1; m
 .contacto{padding:96px 0 80px}
 .contacto h2{font-size:clamp(3.2rem,9.5vw,7.6rem); line-height:.86}
 .contacto h2 span{display:block; color:var(--carmin)}
-.canales{display:flex; flex-wrap:wrap; gap:12px 28px; margin-top:34px; font-size:1.2rem}
+.canales{display:flex; flex-wrap:wrap; gap:0 28px; margin-top:28px; font-size:1.2rem}
+.canales .correo{flex-basis:100%; overflow-wrap:anywhere}
+@media (max-width:600px){ .canales{font-size:1.1rem; gap:0 22px} }
 .canales .correo{font-weight:600}
 footer{padding:28px 0 40px; border-top:1px solid var(--linea); font-size:.95rem; color:var(--tinta-2)}
 footer .envoltura{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px}
@@ -290,18 +319,21 @@ footer .envoltura{display:flex; flex-wrap:wrap; justify-content:space-between; g
 </svg>
 <a class="salto" href="#contenido">Saltar al contenido</a>
 
-<header class="envoltura barra">
-  <a class="firma" href="#">Pedro Guzmán<span>.</span></a>
-  <nav aria-label="Secciones">
-    <a href="#construir">Construir</a>
-    <a href="#ensenar">Enseñar</a>
-    <a href="#investigar">Investigar</a>
-    <a href="#pensar">Pensar</a>
-    <a href="#cuentas">Todas mis obras</a>
-    <a href="#trayectoria">Trayectoria</a>
-    <a href="#contacto">Contacto</a>
-    <button class="tema" type="button" id="tema" title="Cambiar entre modo día y modo noche">De noche</button>
-  </nav>
+<header class="cabecera" id="cabecera">
+  <div class="envoltura barra">
+    <a class="firma" href="#">Pedro Guzmán<span>.</span></a>
+    <nav class="secciones" id="secciones" aria-label="Secciones">
+      <a class="c-construir" href="#construir">Construir</a>
+      <a class="c-ensenar" href="#ensenar">Enseñar</a>
+      <a class="c-investigar" href="#investigar">Investigar</a>
+      <a class="c-pensar" href="#pensar">Pensar</a>
+      <a href="#cuentas">Todas mis obras</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="tema" type="button" id="tema" title="Cambiar entre modo día y modo noche"><svg class="tema-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg><span class="tema-txt">De noche</span></button>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="secciones"><i aria-hidden="true"></i>Menú</button>
+  </div>
 </header>
 
 <main id="contenido">
@@ -597,7 +629,8 @@ footer .envoltura{display:flex; flex-wrap:wrap; justify-content:space-between; g
 (function(){
   var root=document.documentElement, btn=document.getElementById('tema');
   function oscuro(){ var t=root.getAttribute('data-theme'); return t ? t==='dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
-  function pintarBoton(){ btn.textContent = oscuro() ? 'De día' : 'De noche'; }
+  var txt=btn.querySelector('.tema-txt'), ico=btn.querySelector('.tema-ico path');
+  function pintarBoton(){ var o=oscuro(); txt.textContent = o ? 'De día' : 'De noche'; ico.setAttribute('d', o ? 'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1' : 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z'); ico.setAttribute('stroke', o ? 'currentColor':'none'); ico.setAttribute('stroke-width','2'); ico.setAttribute('fill', o ? 'none':'currentColor'); }
   try{ var g=localStorage.getItem('tema'); if(g) root.setAttribute('data-theme',g); }catch(e){}
   pintarBoton();
   btn.addEventListener('click',function(){
@@ -605,6 +638,13 @@ footer .envoltura{display:flex; flex-wrap:wrap; justify-content:space-between; g
     root.setAttribute('data-theme',n); pintarBoton();
     try{ localStorage.setItem('tema',n); }catch(e){}
   });
+
+  var cab=document.getElementById('cabecera'), mb=document.getElementById('menu-btn');
+  function menu(abrir){ cab.classList.toggle('abierta',abrir); mb.setAttribute('aria-expanded',abrir?'true':'false'); }
+  mb.addEventListener('click',function(){ menu(!cab.classList.contains('abierta')); });
+  document.querySelectorAll('#secciones a').forEach(function(a){ a.addEventListener('click',function(){ menu(false); }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && cab.classList.contains('abierta')){ menu(false); mb.focus(); } });
+  document.addEventListener('click',function(e){ if(cab.classList.contains('abierta') && !cab.contains(e.target)) menu(false); });
 
   var botones=document.querySelectorAll('.filtros button'), filas=document.querySelectorAll('.libro-cuentas tbody tr'), resumen=document.getElementById('resumen');
   function filtrar(eje){
