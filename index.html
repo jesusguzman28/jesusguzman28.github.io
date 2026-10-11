@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedro Jesús Guzmán Ramos</title>
+<meta name="description" content="Ingeniero de sistemas, docente y autor desde Coracora, Ayacucho. ApuraY, TiniBot, MindBlock, QUIPUY, BIT-ONE y Liberalismo Comunal: obras, no promesas.">
+<meta property="og:title" content="Pedro Jesús Guzmán Ramos — obras, no promesas">
+<meta property="og:description" content="Tecnología hecha desde las provincias: apps en producción, robots en el aula y un libro sobre la libertad en los Andes.">
+<meta property="og:image" content="https://jesusguzman28.github.io/assets/og.jpg">
+<meta property="og:url" content="https://jesusguzman28.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Pedro Jesús Guzmán Ramos","jobTitle":"Ingeniero de Tecnologías de Información y Sistemas","email":"mailto:pedrojesusguzmanramos@gmail.com","homeLocation":"Coracora, Ayacucho, Perú","alumniOf":["Universidad ESAN","Universidad Nacional de Huancavelica"],"url":"https://jesusguzman28.github.io/","sameAs":["https://github.com/jesusguzman28","https://www.linkedin.com/in/jesusguzman01/","https://x.com/pjguzmanr","https://liberalismocomunal.org/pedro-jesus-guzman-ramos/","https://orcid.org/0009-0005-5673-7452"]}
+</script>
+<style>
+:root{
+  --cal:#ECEDE7; --cal-2:#E1E2D9;
+  --anil:#1F2F8F; --carmin:#B5122B; --maiz:#F0B623; --adobe:#8E5A3A; --pasto:#3A6534;
+  --tinta:#1B1D2A; --tinta-2:#4A4C5C;
+  --linea:rgba(27,29,42,.18); --papel:#F7F7F3;
+  --display:"Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --texto:"Newsreader", Georgia, "Times New Roman", serif;
+  --ancho:1180px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --cal:#161A33; --cal-2:#1D2242;
+    --anil:#9AA8FF; --carmin:#FF6B7A; --maiz:#F5C443; --adobe:#D9A07A; --pasto:#8DBB7E;
+    --tinta:#ECEBE4; --tinta-2:#B4B5C4; --linea:rgba(236,235,228,.18); --papel:#1F2446;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --cal:#161A33; --cal-2:#1D2242;
+  --anil:#9AA8FF; --carmin:#FF6B7A; --maiz:#F5C443; --adobe:#D9A07A; --pasto:#8DBB7E;
+  --tinta:#ECEBE4; --tinta-2:#B4B5C4; --linea:rgba(236,235,228,.18); --papel:#1F2446;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--cal); color:var(--tinta);
+  font-family:var(--texto); font-size:1.1875rem; line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+/* textura de cal */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .1 0 0 0 0 .12 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+main,header,footer{position:relative; z-index:1}
+img{max-width:100%; height:auto; display:block}
+a{color:inherit; text-underline-offset:3px; text-decoration-thickness:1px}
+:focus-visible{outline:3px solid var(--maiz); outline-offset:3px; border-radius:2px}
+.envoltura{max-width:var(--ancho); margin:0 auto; padding:0 24px}
+@media (max-width:600px){ .envoltura{padding:0 16px} body{font-size:1.0625rem} }
+.salto{position:absolute; left:-999px; top:8px; background:var(--tinta); color:var(--cal); padding:8px 14px; z-index:50}
+.salto:focus{left:8px}
+p{margin:0 0 1em}
+
+/* colores de cada frente: el mismo color va del mapa a su sección */
+.c-construir{--frente:var(--anil)}
+.c-ensenar{--frente:var(--pasto)}
+.c-investigar{--frente:var(--adobe)}
+.c-pensar{--frente:var(--carmin)}
+
+/* ---------- barra ---------- */
+.barra{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:18px; padding-bottom:18px}
+.firma{font-family:var(--display); font-weight:900; font-size:1.5rem; text-decoration:none; line-height:1}
+.firma span{color:var(--carmin)}
+.barra nav{display:flex; gap:20px; align-items:center; font-size:1rem}
+.barra nav a{text-decoration:none; border-bottom:1px solid transparent}
+.barra nav a:hover{border-bottom-color:currentColor}
+.tema{font:inherit; font-size:.95rem; background:none; color:inherit; border:1px solid var(--linea); padding:4px 12px; border-radius:99px; cursor:pointer}
+@media (max-width:900px){ .barra nav a{display:none} }
+
+/* ---------- pinta (hero) ---------- */
+.pintado{filter:url(#brocha)}
+.pinta{padding:40px 0 80px}
+.muro{display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:56px; align-items:center}
+.pinta h1{margin:0; font-family:var(--display); font-weight:900; line-height:.82}
+.pinta h1 .l1{display:block; color:var(--anil); font-size:clamp(4.2rem, 13vw, 11rem)}
+.pinta h1 .l2{display:block; color:var(--carmin); font-size:clamp(2.6rem, 7.4vw, 6.2rem); margin-top:.12em; line-height:.9}
+.pinta h1 .l3{display:block; color:var(--tinta); font-weight:700; font-size:clamp(1.6rem, 3.5vw, 2.9rem); margin-top:.35em; line-height:1}
+.subrayado{display:block; height:14px; width:min(520px,70%); margin:18px 0 28px; background:var(--maiz); clip-path:polygon(0 30%,4% 0,100% 20%,98% 100%,2% 85%)}
+.bajada{max-width:34em; font-size:1.25rem; line-height:1.55; margin:0}
+.bajada strong{font-weight:600}
+.acciones{display:flex; flex-wrap:wrap; gap:14px; margin-top:28px}
+.boton{display:inline-block; font-family:var(--display); font-weight:700; font-size:1.3rem; letter-spacing:.02em; text-decoration:none; padding:10px 22px 9px; background:var(--anil); color:var(--cal); border-radius:3px}
+.boton.sec{background:transparent; color:var(--tinta); box-shadow:inset 0 0 0 2px var(--tinta)}
+
+/* chapita de campaña con la foto */
+.chapita{margin:0; text-align:center}
+.chapita .disco{width:220px; height:220px; margin:0 auto; border-radius:50%; padding:10px; background:var(--maiz); box-shadow:0 0 0 5px var(--anil), 0 14px 0 -2px rgba(27,29,42,.12)}
+.chapita img{width:200px; height:200px; border-radius:50%; object-fit:cover}
+.chapita figcaption{margin-top:22px; font-family:var(--display); font-weight:700; font-size:1.45rem; line-height:1.05}
+.chapita figcaption small{display:block; font-family:var(--texto); font-weight:400; font-size:.98rem; color:var(--tinta-2); margin-top:6px; line-height:1.4}
+@media (max-width:860px){
+  .muro{grid-template-columns:1fr; gap:44px}
+  .chapita{display:flex; align-items:center; gap:22px; text-align:left}
+  .chapita .disco{width:140px; height:140px; padding:7px; margin:0; flex:none}
+  .chapita img{width:126px; height:126px}
+  .chapita figcaption{margin-top:0}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .pinta h1 .l1,.pinta h1 .l2,.pinta h1 .l3,.subrayado{animation:brochazo .9s cubic-bezier(.6,.05,.25,1) both}
+  .pinta h1 .l2{animation-delay:.55s}
+  .pinta h1 .l3{animation-delay:.95s}
+  .subrayado{animation-delay:1.25s; animation-duration:.5s}
+}
+@keyframes brochazo{from{clip-path:inset(-10% 100% -10% 0)} to{clip-path:inset(-10% 0 -10% 0)}}
+
+/* ---------- secciones ---------- */
+section{padding:88px 0}
+.franja{background:var(--cal-2); border-top:1px solid var(--linea); border-bottom:1px solid var(--linea)}
+h2{font-family:var(--display); font-weight:900; font-size:clamp(2.6rem,6vw,4.4rem); line-height:.92; margin:0 0 18px; color:var(--anil)}
+h3{font-family:var(--display); font-weight:700; font-size:2rem; line-height:1; margin:0 0 10px}
+.intro{max-width:36em; color:var(--tinta-2); margin:0 0 44px; font-size:1.2rem}
+
+/* ---------- una sola idea (mapa) ---------- */
+.idea-frase{font-size:clamp(1.5rem,2.6vw,2rem); line-height:1.35; max-width:30em; margin:0 0 48px}
+.idea-frase em{font-style:italic}
+.mapa{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-top:2px solid var(--tinta)}
+.mapa a{display:block; text-decoration:none; padding:22px 22px 26px 0; border-top:8px solid var(--frente); margin-top:-2px}
+.mapa a + a{padding-left:22px; border-left:1px solid var(--linea)}
+.mapa b{display:block; font-family:var(--display); font-weight:900; font-size:2.3rem; line-height:1; color:var(--frente); margin-bottom:8px}
+.mapa span{display:block; font-size:1.02rem; line-height:1.45}
+.mapa small{display:block; margin-top:10px; color:var(--tinta-2); font-size:.95rem}
+.mapa a:hover b{text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:6px}
+@media (max-width:860px){
+  .mapa{grid-template-columns:1fr 1fr}
+  .mapa a, .mapa a + a{padding:20px 16px 22px 0; border-left:0}
+  .mapa a:nth-child(even){padding-left:16px; border-left:1px solid var(--linea)}
+}
+@media (max-width:480px){ .mapa{grid-template-columns:1fr} .mapa a:nth-child(even){padding-left:0; border-left:0} }
+
+/* ---------- frentes ---------- */
+.frente-cab{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:56px; align-items:end; margin-bottom:56px}
+.frente-cab h2{color:var(--frente); font-size:clamp(3.6rem,9vw,7rem); line-height:.84; margin:0}
+.frente-cab p{margin:0; font-size:1.25rem; max-width:32em}
+@media (max-width:860px){ .frente-cab{grid-template-columns:1fr; gap:18px; margin-bottom:40px} }
+
+.obra{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:56px; align-items:center}
+.obra .marca{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.obra .marca img{width:48px; height:48px; border-radius:11px}
+.obra h3{font-size:clamp(2.2rem,4.4vw,3.2rem); font-weight:900; margin:0}
+.obra .lema{font-style:italic; color:var(--tinta-2); margin:4px 0 18px; font-size:1.2rem}
+.obra .texto{max-width:33em}
+.hechos{list-style:none; padding:0; margin:22px 0; border-top:1px solid var(--linea)}
+.hechos li{display:grid; grid-template-columns:8.5rem 1fr; gap:14px; padding:10px 0; border-bottom:1px solid var(--linea); font-size:1.05rem}
+.hechos b{font-family:var(--display); font-weight:700; font-size:1.35rem; line-height:1.15; color:var(--frente)}
+.enlaces{display:flex; flex-wrap:wrap; gap:8px 22px; font-size:1.05rem}
+.marco{border-radius:6px; overflow:hidden; box-shadow:0 0 0 1px var(--linea); background:#fff}
+.telefono{width:280px; max-width:100%; margin:0 auto; border:9px solid #1B1D2A; border-radius:32px; overflow:hidden; background:#fff}
+.tapa{width:290px; max-width:100%; margin:0 auto; box-shadow:0 18px 30px -18px rgba(0,0,0,.5)}
+@media (max-width:860px){
+  .obra{grid-template-columns:1fr; gap:36px}
+  .hechos li{grid-template-columns:1fr; gap:2px}
+}
+
+/* lista corta de otras obras dentro de un frente */
+.tambien{margin-top:64px; display:grid; grid-template-columns:12rem minmax(0,1fr); gap:24px 40px}
+.tambien > h3{font-size:1.7rem; margin:0}
+.tambien ul{list-style:none; margin:0; padding:0; border-top:1px solid var(--linea)}
+.tambien li{display:grid; grid-template-columns:11rem minmax(0,1fr); gap:6px 24px; padding:14px 0; border-bottom:1px solid var(--linea)}
+.tambien li > b{font-family:var(--display); font-weight:700; font-size:1.4rem; line-height:1.15}
+.tambien li p{margin:0; font-size:1.05rem}
+.tambien li small{display:block; color:var(--tinta-2); font-size:.95rem; margin-top:2px}
+@media (max-width:860px){
+  .tambien{grid-template-columns:1fr; margin-top:48px}
+  .tambien li{grid-template-columns:1fr}
+}
+
+/* puente entre un frente y el siguiente */
+.puente{margin:64px 0 0; padding:26px 0 0; border-top:2px solid var(--tinta); display:grid; grid-template-columns:12rem minmax(0,1fr); gap:24px 40px}
+.puente b{font-family:var(--display); font-weight:700; font-size:1.7rem; line-height:1}
+.puente p{margin:0; max-width:34em; font-size:1.15rem}
+@media (max-width:860px){ .puente{grid-template-columns:1fr; gap:8px} }
+
+/* ---------- pensar ---------- */
+.consigna{font-family:var(--display); font-weight:900; font-size:clamp(3rem,8.6vw,7rem); line-height:.86; margin:72px 0 28px; color:var(--tinta)}
+.consigna span{display:block; color:var(--carmin)}
+.definicion{font-size:1.3rem; line-height:1.55; max-width:32em; margin:0 0 44px}
+.principios-bloque{display:grid; grid-template-columns:12rem minmax(0,1fr); gap:24px 40px}
+.principios-bloque h3{font-size:1.7rem; margin:0}
+.principios{columns:2; column-gap:48px; margin:0; padding:0 0 0 1.7em}
+.principios li{break-inside:avoid; padding:0 0 8px 6px; font-size:1.1rem}
+.principios li::marker{font-family:var(--display); font-weight:700; color:var(--carmin)}
+.metodo{grid-column:2; display:flex; flex-wrap:wrap; margin:20px 0 0; padding:0; list-style:none; font-family:var(--display); font-weight:700; font-size:clamp(1.3rem,2.4vw,1.8rem); line-height:1.15}
+.metodo li{padding:4px 18px 4px 0; margin-right:18px; border-right:2px solid var(--linea)}
+.metodo li:last-child{border-right:0; color:var(--carmin)}
+@media (max-width:860px){
+  .principios-bloque{grid-template-columns:1fr}
+  .metodo{grid-column:1}
+}
+@media (max-width:600px){ .principios{columns:1} .metodo{display:block} .metodo li{border-right:0; padding:4px 0} }
+
+/* ---------- rendición de cuentas ---------- */
+.filtros{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px}
+.filtros button{font:inherit; font-size:1rem; cursor:pointer; background:transparent; color:var(--tinta); border:1.5px solid var(--tinta); border-radius:99px; padding:5px 16px}
+.filtros button[aria-pressed="true"]{background:var(--tinta); color:var(--cal)}
+.libro-cuentas{width:100%; border-collapse:collapse; font-size:1.02rem; background:var(--papel); box-shadow:0 0 0 1px var(--linea)}
+.libro-cuentas caption{text-align:left; font-size:.98rem; color:var(--tinta-2); padding:0 0 10px; caption-side:top}
+.libro-cuentas th{font-family:var(--display); font-weight:700; font-size:1.15rem; text-align:left; padding:12px 16px; border-bottom:2px solid var(--tinta); white-space:nowrap}
+.libro-cuentas td{padding:14px 16px; border-bottom:1px solid var(--linea); vertical-align:top}
+.libro-cuentas tr:last-child td{border-bottom:0}
+.libro-cuentas td:first-child{font-family:var(--display); font-weight:700; font-size:1.35rem; line-height:1.1; width:16%; border-left:5px solid var(--frente)}
+.libro-cuentas td.anio{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--tinta-2)}
+.libro-cuentas td small{display:block; color:var(--tinta-2); font-size:.92rem; margin-top:2px}
+.estado{display:inline-flex; align-items:center; gap:7px; white-space:nowrap}
+.estado::before{content:""; flex:none; width:10px; height:10px; border-radius:50%; background:var(--c,var(--tinta-2))}
+.estado.vivo{--c:#2F8A3E} .estado.en-aula{--c:var(--maiz)} .estado.en-obra{--c:#C2772F} .estado.lab{--c:var(--anil)}
+.libro-cuentas tr[hidden]{display:none}
+.resumen-cuentas{margin-top:14px; font-size:.98rem; color:var(--tinta-2)}
+@media (max-width:760px){
+  .libro-cuentas caption{display:block; padding:12px 16px 0}
+  .libro-cuentas thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+  .libro-cuentas, .libro-cuentas tbody, .libro-cuentas tr, .libro-cuentas td{display:block; width:auto}
+  .libro-cuentas tr{padding:14px 16px; border-bottom:1px solid var(--linea); border-left:5px solid var(--frente)}
+  .libro-cuentas td{border:0; padding:3px 0}
+  .libro-cuentas td:first-child{width:auto; font-size:1.5rem; border-left:0}
+  .libro-cuentas td[data-t]::before{content:attr(data-t) ": "; color:var(--tinta-2); font-size:.92rem}
+}
+
+/* ---------- trayectoria ---------- */
+.dos-col{display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:64px}
+.linea-tiempo{list-style:none; margin:0; padding:0; border-left:3px solid var(--anil)}
+.linea-tiempo li{position:relative; padding:0 0 32px 32px}
+.linea-tiempo li::before{content:""; position:absolute; left:-9px; top:8px; width:15px; height:15px; background:var(--cal-2); border:3px solid var(--anil); border-radius:50%}
+.linea-tiempo li.ahora::before{background:var(--carmin); border-color:var(--carmin)}
+.linea-tiempo .cuando{font-family:var(--display); font-weight:700; font-size:1.2rem; color:var(--carmin); line-height:1.2}
+.linea-tiempo h3{font-size:1.7rem; margin:2px 0 4px}
+.linea-tiempo p{margin:0; color:var(--tinta-2); max-width:38em}
+.formacion > div{padding:0 0 18px; margin:0 0 18px; border-bottom:1px solid var(--linea)}
+.formacion h3{font-size:1.55rem; margin-bottom:4px}
+.formacion p{margin:0; color:var(--tinta-2); font-size:1.02rem}
+.formacion h4{font-family:var(--display); font-size:1.35rem; margin:26px 0 8px; font-weight:700}
+.formacion ul{margin:0; padding-left:1.1em; color:var(--tinta-2); font-size:1rem}
+@media (max-width:860px){ .dos-col{grid-template-columns:1fr; gap:28px} }
+
+/* ---------- contacto ---------- */
+.contacto{padding:96px 0 80px}
+.contacto h2{font-size:clamp(3.2rem,9.5vw,7.6rem); line-height:.86}
+.contacto h2 span{display:block; color:var(--carmin)}
+.canales{display:flex; flex-wrap:wrap; gap:12px 28px; margin-top:34px; font-size:1.2rem}
+.canales .correo{font-weight:600}
+footer{padding:28px 0 40px; border-top:1px solid var(--linea); font-size:.95rem; color:var(--tinta-2)}
+footer .envoltura{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="brocha" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency=".045 .9" numOctaves="2" seed="7" result="r"/>
+    <feDisplacementMap in="SourceGraphic" in2="r" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -4 3.05" result="huecos"/>
+    <feComposite in="d" in2="huecos" operator="in"/>
+  </filter>
+</svg>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="envoltura barra">
+  <a class="firma" href="#">Pedro Guzmán<span>.</span></a>
+  <nav aria-label="Secciones">
+    <a href="#construir">Construir</a>
+    <a href="#ensenar">Enseñar</a>
+    <a href="#investigar">Investigar</a>
+    <a href="#pensar">Pensar</a>
+    <a href="#cuentas">Todas mis obras</a>
+    <a href="#trayectoria">Trayectoria</a>
+    <a href="#contacto">Contacto</a>
+    <button class="tema" type="button" id="tema" aria-label="Cambiar entre modo día y modo noche">De noche</button>
+  </nav>
+</header>
+
+<main id="contenido">
+  <!-- PINTA -->
+  <section class="pinta" aria-labelledby="titulo">
+    <div class="envoltura muro">
+      <div>
+        <h1 id="titulo" class="pintado">
+          <span class="l1">Pedro Guzmán</span>
+          <span class="l2">obras, no promesas</span>
+          <span class="l3">Tecnología hecha desde las provincias</span>
+        </h1>
+        <span class="subrayado pintado" aria-hidden="true"></span>
+        <p class="bajada">Soy ingeniero de sistemas, docente y autor. Vivo y trabajo en <strong>Coracora, Ayacucho</strong>. Desde aquí construyo apps que la gente usa todos los días, robots para que los niños del campo aprendan a programar y un sistema para mi instituto. También escribo sobre una libertad que nace abajo.</p>
+        <div class="acciones">
+          <a class="boton" href="#idea">Conoce mi trabajo</a>
+          <a class="boton sec" href="#contacto">Escríbeme</a>
+        </div>
+      </div>
+      <figure class="chapita">
+        <div class="disco"><img src="assets/pedro.jpg" alt="Pedro Jesús Guzmán Ramos sonriendo, con lentes" width="238" height="238"></div>
+        <figcaption>Pedro Jesús Guzmán Ramos<small>Ingeniero CIP 390913<br>Coracora, Parinacochas</small></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- UNA SOLA IDEA -->
+  <section id="idea" class="franja" aria-labelledby="idea-t">
+    <div class="envoltura">
+      <h2 id="idea-t">Una sola idea, cuatro frentes</h2>
+      <p class="idea-frase">Creo que las decisiones deben tomarse <em>cerca de quienes viven sus consecuencias</em>. Con la tecnología pasa lo mismo: la provincia no tiene que esperar a que Lima le traiga las herramientas. Puede hacerlas ella misma.</p>
+      <nav class="mapa" aria-label="Los cuatro frentes">
+        <a class="c-construir" href="#construir"><b>Construir</b><span>Apps y sistemas que la gente usa todos los días.</span><small>ApuraY, BIT-ONE, QUIPUY</small></a>
+        <a class="c-ensenar" href="#ensenar"><b>Enseñar</b><span>Que los niños y jóvenes del campo creen tecnología, no solo la usen.</span><small>TiniBot, MindBlock, IESTP</small></a>
+        <a class="c-investigar" href="#investigar"><b>Investigar</b><span>Inteligencia artificial y simulación, explicadas y abiertas.</span><small>chivato, Sociedad artificial</small></a>
+        <a class="c-pensar" href="#pensar"><b>Pensar</b><span>La idea de fondo, escrita en un libro y una propuesta.</span><small>Libertad en los Andes</small></a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- CONSTRUIR -->
+  <section id="construir" class="c-construir" aria-labelledby="construir-t">
+    <div class="envoltura">
+      <div class="frente-cab">
+        <h2 id="construir-t" class="pintado">Construir</h2>
+        <p>Una economía local fuerte necesita sus propias herramientas. Por eso hago software para negocios de provincia, con gente de provincia.</p>
+      </div>
+
+      <article class="obra">
+        <div class="texto">
+          <div class="marca"><img src="assets/apuray-logo.png" alt="" width="48" height="48"><h3>ApuraY</h3></div>
+          <p class="lema">Tu mototaxi y tus pedidos en Coracora.</p>
+          <p>En provincia nadie iba a venir a hacernos un Rappi, así que lo hicimos nosotros: una app para pedir mototaxi, comida, mercado, licorería, regalos y envíos, que llevan motorizados de la misma ciudad. Empezamos en una ciudad de unos 10 000 habitantes para probar el modelo antes de crecer.</p>
+          <ul class="hechos">
+            <li><b>12 jul 2026</b><span>Lanzamiento oficial en Coracora: 108 usuarios nuevos el primer día.</span></li>
+            <li><b>1 000+</b><span>descargas de la app de clientes en Google Play.</span></li>
+            <li><b>3 apps</b><span>Clientes, negocios (Mi Tienda AP) y motorizados (PUSAQ, del quechua <i>pusay</i>, guiar).</span></li>
+            <li><b>Hecha con</b><span>Kotlin y Jetpack Compose, Laravel, Firebase y Google Maps.</span></li>
+          </ul>
+          <div class="enlaces">
+            <a href="https://apuray.pe">apuray.pe</a>
+            <a href="https://play.google.com/store/apps/details?id=pe.apuray.river">Descargar en Google Play</a>
+          </div>
+        </div>
+        <div class="telefono"><img src="assets/apuray-ruta.jpg" alt="Pantalla de ApuraY trazando una ruta de mototaxi de la Plaza Jorge Chávez a la Plaza de Armas de Coracora" width="540" height="904" loading="lazy"></div>
+      </article>
+
+      <div class="tambien">
+        <h3>También construyo</h3>
+        <ul>
+          <li><b>BIT-ONE</b><p>Mi empresa de software a medida, Bitone E.I.R.L. Desde aquí se publican las apps en Google Play. <a href="https://bitone.pe">bitone.pe</a></p></li>
+          <li><b>QUIPUY</b><p>Plataforma preuniversitaria: te dice cuánto te falta para el puntaje de corte de tu carrera, con simulacros y preguntas generadas con IA. <a href="https://quipuy.pe">quipuy.pe</a></p></li>
+          <li><b>Intranet JMF</b><p>Proyectos, personal, asistencia y vacaciones de una consultora de ingeniería minera y ambiental, con app en Google Play.</p></li>
+          <li><b>Paz y Bien</b><p>Caja, resultados de laboratorio y auditoría para una clínica con varias sedes.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENSEÑAR -->
+  <section id="ensenar" class="c-ensenar franja" aria-labelledby="ensenar-t">
+    <div class="envoltura">
+      <div class="frente-cab">
+        <h2 id="ensenar-t" class="pintado">Enseñar</h2>
+        <p>Si en la provincia vamos a hacer nuestra propia tecnología, primero tenemos que aprender a hacerla. Empiezo con niños de primaria y sigo con jóvenes de instituto.</p>
+      </div>
+
+      <article class="obra">
+        <div class="texto">
+          <h3>TiniBot y MindBlock</h3>
+          <p class="lema">Ingeniería peruana hecha en los Andes.</p>
+          <p>TiniBot es un robot educativo de bajo costo para niños de 6 a 12 años. Lleva una placa ESP32 de menos de 5 × 5 cm, motores con encoder y un chasis impreso en 3D. Se programa con bloques en MindBlock, en la web o en una app Android que funciona sin internet, porque en muchas escuelas del campo no hay señal.</p>
+          <ul class="hechos">
+            <li><b>2022</b><span>Primera presentación en la Hackathon de Robótica Educativa del MINEDU (PerúEduca).</span></li>
+            <li><b>8,23 → 10,83</b><span>Así subió el promedio de pensamiento computacional (sobre 20) de 30 alumnos de primaria de Parinacochas después de trabajar con TiniBot. Lo medí en mi tesis de maestría (Wilcoxon, p &lt; 0,001).</span></li>
+            <li><b>44 cursos</b><span>en 11 niveles en MindBlock, con entornos como AntArt, TiniMusic, GameBlock y Arena 3D.</span></li>
+          </ul>
+          <div class="enlaces"><a href="https://mindblock.io">mindblock.io</a></div>
+        </div>
+        <div class="marco"><img src="assets/tinibot-kit.jpg" alt="Dos robots TiniBot rojos con ojos saltones, ruedas azules y la placa electrónica a la vista" width="900" height="675" loading="lazy"></div>
+      </article>
+
+      <div class="tambien">
+        <h3>En el instituto</h3>
+        <ul>
+          <li><b>IESTP Paucar del Sarasara</b><p>Soy docente y coordinador de Desarrollo de Sistemas de Información. Mis alumnos auditan software real con ISO/IEC 25010, encuentran errores sembrados a propósito y los corrigen con pruebas.</p></li>
+          <li><b>Sistema Integrado</b><p>Matrícula, notas, asistencia, horarios y titulación del instituto, con app para docentes y estudiantes. Laravel, React, Kotlin y MySQL 8. En construcción.</p></li>
+          <li><b>Material abierto</b><p>Todo lo que uso en clase es público para que cualquier docente de provincia lo aproveche:
+            <a href="https://jesusguzman28.github.io/megatienda-auditoria-web/">auditoría web MegaTienda</a>,
+            <a href="https://jesusguzman28.github.io/megatienda-web-mejorada/">MegaTienda corregida</a>,
+            <a href="https://github.com/jesusguzman28/taller-01-linea-base">taller ISO 25010 MiniPOS</a>,
+            <a href="https://github.com/jesusguzman28/clean-architecture-veterinaria">arquitectura limpia en PHP</a> y
+            <a href="https://github.com/jesusguzman28/api-mysql-php-python-java">la misma API en PHP, Python y Java</a>.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTIGAR -->
+  <section id="investigar" class="c-investigar" aria-labelledby="investigar-t">
+    <div class="envoltura">
+      <div class="frente-cab">
+        <h2 id="investigar-t" class="pintado">Investigar</h2>
+        <p>La inteligencia artificial no tiene por qué ser una caja negra que llega de afuera. Me interesa entenderla, medirla y explicarla en español.</p>
+      </div>
+      <div class="tambien" style="margin-top:0">
+        <h3>Proyectos</h3>
+        <ul>
+          <li><b>chivato</b><p>Detecta en textos en español la redacción hecha con IA, sin usar IA: 357 reglas transparentes, gratis y sin internet. Tiene 193 pruebas automáticas y pronto será de código abierto.</p></li>
+          <li><b>SMART Challenge</b><p>Reto del MTC en Kaggle para detectar vehículos en fotos aéreas de cruces del Perú. Llegué al 2.º lugar de la tabla provisional entrenando solo con Colab gratis (YOLO11-OBB).</p></li>
+          <li><b>SumajGAN</b><p>Red generativa que pasa el maquillaje de una foto de referencia a otra cara. <a href="https://github.com/jesusguzman28/SumajGAN">Ver en GitHub</a></p></li>
+          <li><b>Deep Learning desde cero</b><p>Libro de divulgación, de la neurona artificial a los modelos que conversan. En preparación.</p></li>
+        </ul>
+      </div>
+      <div class="puente">
+        <b>Sociedad artificial</b>
+        <p>Aquí la tecnología y la política se juntan. Es un simulador de agentes con un paper interactivo: muestra cómo las instituciones y los incentivos hacen que una sociedad prospere o colapse. <a href="https://jesusguzman28.github.io/sociedad-artificial/">Abrir el simulador</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENSAR -->
+  <section id="pensar" class="c-pensar franja" aria-labelledby="pensar-t">
+    <div class="envoltura">
+      <div class="frente-cab">
+        <h2 id="pensar-t" class="pintado">Pensar</h2>
+        <p>Todo lo anterior sale de una misma convicción. La escribí en un libro y la convertí en una propuesta para el Perú.</p>
+      </div>
+
+      <article class="obra">
+        <div class="texto">
+          <h3>Libertad en los Andes</h3>
+          <p class="lema">La libertad no tiene que llegar a los Andes. Solo tiene que bajar de ellos otra vez.</p>
+          <p>Es un ensayo sobre la libertad que los Andes ya practicaban, con el ayni, la minka, la feria y la ronda, antes de que el Estado centralista la aplastara, y sobre cómo recuperarla desde abajo. De este libro nace Liberalismo Comunal.</p>
+          <ul class="hechos">
+            <li><b>Julio 2026</b><span>Primera edición. Depósito Legal en la Biblioteca Nacional del Perú N.º 2026-07371.</span></li>
+            <li><b>216 páginas</b><span>En papel y en edición digital para Kindle.</span></li>
+          </ul>
+          <div class="enlaces">
+            <a href="https://www.amazon.com/dp/B0HCXB894L">Leer en Kindle</a>
+            <a href="https://liberalismocomunal.org">liberalismocomunal.org</a>
+          </div>
+        </div>
+        <img class="tapa" src="assets/libertad-en-los-andes.jpg" alt="Portada de Libertad en los Andes: comuneros levantando un muro de piedra al atardecer" width="559" height="794" loading="lazy">
+      </article>
+
+      <p class="consigna pintado">Ni izquierda ni derecha,<span>abajo.</span></p>
+      <p class="definicion">El <strong>Liberalismo Comunal</strong> defiende la libertad de cada persona para hacer su propio proyecto de vida dentro de una comunidad libre: propiedad con arraigo, cooperación voluntaria, mercado sin dominación y decisiones tomadas cerca de quienes viven sus consecuencias.</p>
+      <div class="principios-bloque">
+        <h3>Diez principios</h3>
+        <ol class="principios">
+          <li>Libertad personal y comunitaria</li>
+          <li>Reciprocidad voluntaria</li>
+          <li>Autogobierno local</li>
+          <li>Propiedad con raíces</li>
+          <li>Estado que sirve y suelta</li>
+          <li>Democracia vigilada desde abajo</li>
+          <li>Igual dignidad</li>
+          <li>Territorio responsable</li>
+          <li>Cultura viva</li>
+          <li>Democracia constitucional</li>
+        </ol>
+        <h3>El método</h3>
+        <ol class="metodo" style="grid-column:auto; margin:0">
+          <li>Primero escuchar.</li>
+          <li>Después organizar.</li>
+          <li>Luego proponer.</li>
+          <li>Finalmente competir democráticamente.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAS MIS OBRAS -->
+  <section id="cuentas" aria-labelledby="cuentas-t">
+    <div class="envoltura">
+      <h2 id="cuentas-t">Todas mis obras</h2>
+      <p class="intro">Aquí está todo lo que he hecho, frente por frente y con el estado en que está hoy. Varios repositorios son privados porque son de clientes o de productos en marcha; cuando hay algo público, está el enlace.</p>
+
+      <div class="filtros" role="group" aria-label="Filtrar obras por frente">
+        <button type="button" aria-pressed="true" data-eje="todas">Todas</button>
+        <button type="button" aria-pressed="false" data-eje="construir">Construir</button>
+        <button type="button" aria-pressed="false" data-eje="ensenar">Enseñar</button>
+        <button type="button" aria-pressed="false" data-eje="investigar">Investigar</button>
+        <button type="button" aria-pressed="false" data-eje="pensar">Pensar</button>
+      </div>
+
+      <table class="libro-cuentas">
+        <caption>Estado al 10 de octubre de 2026</caption>
+        <thead><tr><th scope="col">Obra</th><th scope="col">Qué es</th><th scope="col">Estado</th><th scope="col">Desde</th><th scope="col">Dónde verla</th></tr></thead>
+        <tbody>
+          <tr class="c-construir" data-eje="construir"><td>ApuraY</td><td data-t="Qué es">Mototaxi, delivery, mercado y envíos para Coracora.<small>Kotlin, Compose, Laravel, Firebase</small></td><td data-t="Estado"><span class="estado vivo">En producción</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://apuray.pe">apuray.pe</a></td></tr>
+          <tr class="c-construir" data-eje="construir"><td>PUSAQ</td><td data-t="Qué es">App de los motorizados: pedidos asignados, ruta, velocímetro y caja del día.<small>Kotlin, Google Maps</small></td><td data-t="Estado"><span class="estado vivo">En producción</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde">Uso interno</td></tr>
+          <tr class="c-construir" data-eje="construir"><td>Mi Tienda AP</td><td data-t="Qué es">Para que los negocios de Coracora reciban y acepten pedidos.<small>Kotlin, Room</small></td><td data-t="Estado"><span class="estado vivo">En Google Play</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://play.google.com/store/apps/details?id=pe.apuray.negocio">Google Play</a></td></tr>
+          <tr class="c-construir" data-eje="construir"><td>BIT-ONE</td><td data-t="Qué es">Mi empresa de software a medida (Bitone E.I.R.L.).<small>Astro, Tailwind</small></td><td data-t="Estado"><span class="estado vivo">Operando</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://bitone.pe">bitone.pe</a></td></tr>
+          <tr class="c-construir" data-eje="construir"><td>QUIPUY</td><td data-t="Qué es">Plataforma preuniversitaria con simulacros y preguntas generadas con IA.<small>Laravel, Kotlin, Flask</small></td><td data-t="Estado"><span class="estado vivo">En línea</span></td><td class="anio" data-t="Desde">2022</td><td data-t="Dónde"><a href="https://quipuy.pe">quipuy.pe</a></td></tr>
+          <tr class="c-construir" data-eje="construir"><td>Intranet JMF</td><td data-t="Qué es">Gestión interna de una consultora de ingeniería minera y ambiental.<small>Laravel 12, Kotlin</small></td><td data-t="Estado"><span class="estado vivo">En producción</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://play.google.com/store/apps/details?id=com.jmf.app">Google Play</a></td></tr>
+          <tr class="c-construir" data-eje="construir"><td>Paz y Bien</td><td data-t="Qué es">Caja y laboratorio para una clínica con varias sedes.<small>Laravel 12, Alpine</small></td><td data-t="Estado"><span class="estado en-obra">En implementación</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde">Cliente privado</td></tr>
+          <tr class="c-ensenar" data-eje="ensenar"><td>TiniBot</td><td data-t="Qué es">Robot educativo ESP32 para niños de 6 a 12 años.<small>ESP32, Electron, Blockly</small></td><td data-t="Estado"><span class="estado en-aula">En aulas</span></td><td class="anio" data-t="Desde">2022</td><td data-t="Dónde"><a href="https://mindblock.io">mindblock.io</a></td></tr>
+          <tr class="c-ensenar" data-eje="ensenar"><td>MindBlock</td><td data-t="Qué es">Clases de programación por bloques para niños de 8 a 12 años.<small>Laravel 11</small></td><td data-t="Estado"><span class="estado vivo">En línea</span></td><td class="anio" data-t="Desde">2024</td><td data-t="Dónde"><a href="https://mindblock.io">mindblock.io</a></td></tr>
+          <tr class="c-ensenar" data-eje="ensenar"><td>Sistema Integrado IESTP</td><td data-t="Qué es">Matrícula, notas, asistencia y titulación del IESTP Paucar del Sarasara.<small>Laravel, React, Kotlin, MySQL 8</small></td><td data-t="Estado"><span class="estado en-obra">En construcción</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde">Uso institucional</td></tr>
+          <tr class="c-ensenar" data-eje="ensenar"><td>Laboratorio MegaTienda</td><td data-t="Qué es">Auditoría web (WCAG 2.2, Nielsen, Core Web Vitals) y su corrección medida.<small>HTML, CSS, JavaScript</small></td><td data-t="Estado"><span class="estado en-aula">En aula</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://jesusguzman28.github.io/megatienda-auditoria-web/">Auditoría</a>, <a href="https://jesusguzman28.github.io/megatienda-web-mejorada/">mejora</a></td></tr>
+          <tr class="c-investigar" data-eje="investigar"><td>chivato</td><td data-t="Qué es">Detector de redacción con IA en español que no usa IA.<small>Python, 357 reglas, 193 pruebas</small></td><td data-t="Estado"><span class="estado lab">Saldrá como código abierto</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde">Pronto en GitHub</td></tr>
+          <tr class="c-investigar" data-eje="investigar"><td>SMART Challenge</td><td data-t="Qué es">Detección de vehículos en fotos aéreas (Kaggle, MTC).<small>YOLO11-OBB</small></td><td data-t="Estado"><span class="estado lab">2.º provisional</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde">Kaggle</td></tr>
+          <tr class="c-investigar" data-eje="investigar"><td>SumajGAN</td><td data-t="Qué es">Transferencia de maquillaje con redes generativas.<small>Python, Jupyter</small></td><td data-t="Estado"><span class="estado lab">Publicado</span></td><td class="anio" data-t="Desde">2019</td><td data-t="Dónde"><a href="https://github.com/jesusguzman28/SumajGAN">GitHub</a></td></tr>
+          <tr class="c-investigar" data-eje="investigar pensar"><td>Sociedad artificial</td><td data-t="Qué es">Simulador de agentes sobre instituciones, incentivos y colapso.<small>JavaScript</small></td><td data-t="Estado"><span class="estado lab">Publicado</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://jesusguzman28.github.io/sociedad-artificial/">Simulador</a></td></tr>
+          <tr class="c-pensar" data-eje="pensar"><td>Libertad en los Andes</td><td data-t="Qué es">Ensayo sobre la libertad que nace abajo.<small>216 páginas, DL 2026-07371</small></td><td data-t="Estado"><span class="estado vivo">Publicado</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://www.amazon.com/dp/B0HCXB894L">Kindle</a></td></tr>
+          <tr class="c-pensar" data-eje="pensar"><td>Liberalismo Comunal</td><td data-t="Qué es">Manifiesto, principios y prioridades de gobierno.<small>React, Vite</small></td><td data-t="Estado"><span class="estado vivo">En línea</span></td><td class="anio" data-t="Desde">2026</td><td data-t="Dónde"><a href="https://liberalismocomunal.org">liberalismocomunal.org</a></td></tr>
+        </tbody>
+      </table>
+      <p class="resumen-cuentas" id="resumen" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- TRAYECTORIA -->
+  <section id="trayectoria" class="franja" aria-labelledby="tray-t">
+    <div class="envoltura">
+      <h2 id="tray-t">Trayectoria</h2>
+      <p class="intro">Aprendí el oficio en empresas de e-commerce y delivery. Hoy hago lo mismo para mi tierra, sin esperar a que nadie lo traiga.</p>
+      <div class="dos-col">
+        <ol class="linea-tiempo">
+          <li class="ahora"><div class="cuando">2026 — hoy</div><h3>Fundador de BIT-ONE y ApuraY</h3><p>Software a medida para empresas del Perú y la plataforma de delivery de Coracora.</p></li>
+          <li class="ahora"><div class="cuando">2024 — hoy</div><h3>Docente en el IESTP Paucar del Sarasara</h3><p>Docente y coordinador de Desarrollo de Sistemas de Información.</p></li>
+          <li class="ahora"><div class="cuando">2022 — hoy</div><h3>Cofundador de TiniBot</h3><p>Producto y tecnología del robot educativo y de la plataforma MindBlock.</p></li>
+          <li><div class="cuando">2024 — 2025</div><h3>Bekit</h3><p>Desarrollador web y control de calidad en e-commerce retail.</p></li>
+          <li><div class="cuando">2022 — 2024</div><h3>MallHogar.com</h3><p>Team Leader Tech de un equipo de 3 a 5 desarrolladores: tienda en VTEX, integraciones con el OMS y temporadas de Cyber Days y Hot Sale.</p></li>
+          <li><div class="cuando">2021 — 2024</div><h3>Logixtal</h3><p>Desarrollador de software y pruebas.</p></li>
+          <li><div class="cuando">2018 — 2020</div><h3>Tulivery</h3><p>Desarrollador full-stack y QA en un marketplace de delivery.</p></li>
+        </ol>
+        <div class="formacion">
+          <div><h3>Universidad ESAN</h3><p>Ingeniero de Tecnologías de Información y Sistemas. Tesis: machine learning para predecir la demanda de muebles en MallHogar.com.</p></div>
+          <div><h3>Universidad Nacional de Huancavelica</h3><p>Maestría en Ciencias de la Educación, mención Investigación y Docencia Superior. Tesis: el kit TiniBot y el pensamiento computacional en primaria en Parinacochas.</p></div>
+          <div><h3>Colegio de Ingenieros del Perú</h3><p>Colegiado CIP N.º 390913.</p></div>
+          <h4>Cursos y certificaciones</h4>
+          <ul>
+            <li>VTEX Tech Training LATAM (2023)</li>
+            <li>Estrategia de Marketing Digital, Pacífico Business School</li>
+            <li>Herramientas de Marketing para la Innovación, CIDE PUCP</li>
+            <li>Fundación Carlos Slim: datos, bases de datos, frontend y liderazgo (2024)</li>
+          </ul>
+          <h4>Herramientas de todos los días</h4>
+          <p>Kotlin y Jetpack Compose, PHP y Laravel, TypeScript, React y NestJS, Python, Swift, MySQL, Firebase, VTEX y WordPress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto" aria-labelledby="contacto-t">
+    <div class="envoltura">
+      <h2 id="contacto-t" class="pintado">¿Hacemos algo<span>por tu provincia?</span></h2>
+      <p class="intro" style="margin-bottom:0">Si tienes una empresa que necesita software, un colegio que quiere robótica o una idea que vale la pena discutir, escríbeme.</p>
+      <div class="canales">
+        <a class="correo" href="mailto:pedrojesusguzmanramos@gmail.com">pedrojesusguzmanramos@gmail.com</a>
+        <a href="https://www.linkedin.com/in/jesusguzman01/">LinkedIn</a>
+        <a href="https://x.com/pjguzmanr">X (@pjguzmanr)</a>
+        <a href="https://www.instagram.com/jesusguzman6261/">Instagram</a>
+        <a href="https://github.com/jesusguzman28">GitHub</a>
+        <a href="https://orcid.org/0009-0005-5673-7452">ORCID</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <span>Pedro Jesús Guzmán Ramos, Coracora, Ayacucho, Perú</span>
+    <span>Cada commit, una pieza del rompecabezas.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('tema');
+  function oscuro(){ var t=root.getAttribute('data-theme'); return t ? t==='dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
+  function pintarBoton(){ btn.textContent = oscuro() ? 'De día' : 'De noche'; }
+  try{ var g=localStorage.getItem('tema'); if(g) root.setAttribute('data-theme',g); }catch(e){}
+  pintarBoton();
+  btn.addEventListener('click',function(){
+    var n = oscuro() ? 'light' : 'dark';
+    root.setAttribute('data-theme',n); pintarBoton();
+    try{ localStorage.setItem('tema',n); }catch(e){}
+  });
+
+  var botones=document.querySelectorAll('.filtros button'), filas=document.querySelectorAll('.libro-cuentas tbody tr'), resumen=document.getElementById('resumen');
+  function filtrar(eje){
+    var n=0;
+    filas.forEach(function(f){ var ok = eje==='todas' || f.dataset.eje.split(' ').indexOf(eje)>-1; f.hidden=!ok; if(ok) n++; });
+    botones.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.eje===eje ? 'true':'false'); });
+    resumen.textContent = n + (n===1 ? ' obra' : ' obras') + (eje==='todas' ? ' en total.' : ' en este frente.');
+  }
+  botones.forEach(function(b){ b.addEventListener('click',function(){ filtrar(b.dataset.eje); }); });
+  filtrar('todas');
+})();
+</script>
+</body>
+</html>
